@@ -1,23 +1,35 @@
-# Damn Vulnerable NodeJS Application
-
-version: "2.1"
 services:
   app:
-    build:
-      context: ./
-      dockerfile: Dockerfile-dev
+    image: node:18-alpine
+    container_name: dvna-app
+    working_dir: /app
+    command: sh -lc "npm install && npx nodemon --legacy-watch app.js"
     ports:
-      - 9090:9090
+      - "9999:9090"          # mở ở http://localhost:9999
     volumes:
       - .:/app
     depends_on:
       - mysql-db
     env_file:
       - ./vars.env
+    environment:
+      MYSQL_HOST: mysql-db
+      MYSQL_PORT: 3306
+      NODE_ENV: development
+      PORT: 9090
+    restart: unless-stopped
 
   mysql-db:
     image: mysql:5.7
-    expose:
-      - "3306"
+    container_name: dvna-mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
     env_file:
       - ./vars.env
+    restart: unless-stopped
+
+volumes:
+  mysql-data:
+
