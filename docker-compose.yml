@@ -5,7 +5,7 @@ services:
     working_dir: /app
     command: sh -lc "npm install && npx nodemon --legacy-watch app.js"
     ports:
-      - "9999:9090"          # mở ở http://localhost:9999
+      - "9999:9090" # mở ở http://localhost:9999
     volumes:
       - .:/app
     depends_on:
@@ -15,7 +15,7 @@ services:
     environment:
       MYSQL_HOST: mysql-db
       MYSQL_PORT: 3306
-      NODE_ENV: development
+      NODE_ENV: production
       PORT: 9090
     restart: unless-stopped
 
@@ -32,4 +32,3 @@ services:
 
 volumes:
   mysql-data:
-
