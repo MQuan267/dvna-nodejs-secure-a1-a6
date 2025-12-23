@@ -7,15 +7,12 @@ var serialize = require("node-serialize")
 const Op = db.Sequelize.Op
 
 module.exports.userSearch = function (req, res) {
-	var query = "SELECT name,id FROM Users WHERE login='" + req.body.login + "'";
-	db.sequelize.query(query, {
-		model: db.User
-	}).then(user => {
-		if (user.length) {
+	db.User.find({where:{'login':req.body.login}}).then(user => {
+		if (user) {
 			var output = {
 				user: {
-					name: user[0].name,
-					id: user[0].id
+					name: user.name,
+					id: user.id
 				}
 			}
 			res.render('app/usersearch', {
