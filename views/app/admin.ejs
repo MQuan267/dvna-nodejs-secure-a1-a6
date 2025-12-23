@@ -24,13 +24,8 @@
     <% include ../common/footer %>
 </body>
     <script>
-        var isAdmin = <%=admin%>;
-        if(!isAdmin){
-            var div = document.getElementById('admin-body');
-            div.style.display = "none";
-        }else{
-            var div = document.getElementById('user-body');
-            div.style.display = "none";            
-        }
+        var isAdmin = <%= admin %>;
+    	document.getElementById('admin-body').style.display = isAdmin ? "block" : "none";
+    	document.getElementById('user-body').style.display = isAdmin ? "none" : "block";
     </script>
 </html>

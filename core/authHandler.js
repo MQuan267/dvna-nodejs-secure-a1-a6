@@ -103,3 +103,17 @@ module.exports.resetPwSubmit = function (req, res) {
 		res.redirect('/forgotpw')
 	}
 }
+
+module.exports.requireRole = function (role) 
+{
+    return function (req, res, next) 
+   {
+        if (!req.isAuthenticated()) {
+            return res.status(401).send('Unauthenticated');
+        }
+        if (!req.user || req.user.role !== role) {
+            return res.status(403).send('Forbidden');
+        }
+        next();
+    }
+}
