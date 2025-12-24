@@ -209,17 +209,31 @@ module.exports.redirect = function (req, res) {
 };
 
 module.exports.calc = function (req, res) {
-  if (req.body.eqn) {
-    res.render("app/calc", {
-      output: mathjs.eval(req.body.eqn),
-    });
-  } else {
-    res.render("app/calc", {
-      output: "Enter a valid math string like (3+3)*2",
-    });
-  }
-};
+    const eqn = req.body.eqn;
 
+    //Kiểm tra có dữ liệu hay không
+    if (!eqn) {
+        return res.render('app/calc', {
+            output: 'Enter a valid math string like (3+3)*2'
+        });
+    }
+    //Validate
+    const regex = /^[0-9+\-*/().\s]+$/;
+    if (!regex.test(eqn)) {
+        return res.render('app/calc', {
+            output: 'Invalid math expression'
+        });
+    }
+
+    try {
+        const result = mathjs.eval(eqn);
+        res.render('app/calc', { output: result });
+    } catch (err) {
+        res.render('app/calc', {
+            output: 'Invalid math expression'
+        });
+    }
+};
 module.exports.listUsersAPI = function (req, res) {
   db.User.findAll({ attributes: ["id", "name", "email"] }).then((users) => {
     res.status(200).json({

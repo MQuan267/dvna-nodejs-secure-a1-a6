@@ -146,7 +146,7 @@ module.exports.forgotPw = function (req, res) {
         token: hashedToken,
         expires: new Date(Date.now() + 15 * 60 * 1000)
       }).then(() => {
-  		const resetLink = `http://localhost:9999/resetpw?token=${rawToken}`
+  		const resetLink = `https://secure.vinhlongxaxu.id.vn/resetpw?token=${rawToken}`
 
 		return sendResetMail(user.email, resetLink)
 			.then(() => {

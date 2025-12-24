@@ -9,6 +9,7 @@ var config = require('./config/server')
 
 //Initialize Express
 var app = express()
+app.disable('x-powered-by')
 require('./core/passport')(passport)
 app.use(express.static('public'))
 app.set('view engine','ejs')
@@ -21,9 +22,9 @@ app.use(fileUpload());
 
 // Intialize Session
 app.use(session({
-  secret: 'keyboard cat',
-  resave: true,
-  saveUninitialized: true,
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
   cookie: { secure: false }
 }))
 
