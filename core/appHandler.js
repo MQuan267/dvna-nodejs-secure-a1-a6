@@ -148,11 +148,18 @@ module.exports.userEdit = function (req, res) {
 };
 
 module.exports.userEditSubmit = function (req, res) {
-  db.User.find({
-    where: {
-      id: req.body.id,
-    },
-  }).then((user) => {
+    const targetUserId = parseInt(req.body.id, 10);
+
+    if (!Number.isInteger(targetUserId)) {
+        return res.status(400).send('Invalid user id');
+    }
+
+    if (req.user.role !== 'admin' && req.user.id !== targetUserId) {
+        return res.status(403).send('Forbidden');
+    }
+
+    db.User.findOne({ where: { id: targetUserId } })
+        .then(user => {
     if (req.body.password.length > 0) {
       if (req.body.password.length > 0) {
         if (req.body.password == req.body.cpassword) {

@@ -39,9 +39,9 @@ module.exports = function () {
         })
     })
 
-    router.get('/admin/usersapi', authHandler.isAuthenticated, appHandler.listUsersAPI)
+   router.get('/admin/usersapi', authHandler.isAuthenticated, authHandler.requireRole('admin'), appHandler.listUsersAPI)
 
-    router.get('/admin/users', authHandler.isAuthenticated, function(req, res){
+    router.get('/admin/users', authHandler.isAuthenticated, authHandler.requireRole('admin'), function(req, res){
         res.render('app/adminusers')
     })
 
