@@ -28,17 +28,14 @@ Mục tiêu của đồ án là xác định nguyên nhân gây ra lỗ hổng, 
 
 ## Thông tin thành viên nhóm
 
-| Mã SV | Họ và tên | Nhóm |
+## Thông tin thành viên nhóm
 
-| -------: | ---------------- | :--: |
-
-| 23520538 | Phạm Huy Hoàng | 13 |
-
-| 23521265 | Nguyễn Minh Quân | 13 |
-
-| 23521271 | Trần Hồng Quân | 13 |
-
-| 23521343 | Nguyễn Ngọc Sáng | 13 |
+| Mã SV    | Họ và tên        | Nhóm |
+| -------- | ---------------- | :--: |
+| 23520538 | Phạm Huy Hoàng   |  13  |
+| 23521265 | Nguyễn Minh Quân |  13  |
+| 23521271 | Trần Hồng Quân   |  13  |
+| 23521343 | Nguyễn Ngọc Sáng |  13  |
 
 # Damn Vulnerable NodeJS Application (DVNA)
 
