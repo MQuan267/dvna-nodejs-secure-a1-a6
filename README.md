@@ -1,3 +1,45 @@
+# NT213 - Web Application Security Hardening on DVNA
+
+**Lớp:** NT213.Q12.ANTT
+
+**GVHD:** Nghi Hoàng Khoa
+
+**Nhóm:** 13
+
+## Mô tả đồ án
+
+Đồ án tập trung vào việc phân tích, khai thác và khắc phục các lỗ hổng bảo mật trong **Damn Vulnerable NodeJS Application (DVNA)**, một ứng dụng NodeJS/Express được thiết kế có chủ đích để mô phỏng các lỗ hổng web phổ biến theo OWASP Top 10.
+
+Trong phạm vi đồ án, nhóm thực hiện đánh giá và sửa lỗi đối với các nhóm lỗ hổng **OWASP Top 10 2017 từ A1 đến A6**, bao gồm:
+
+- **A1: Injection**
+
+- **A2: Broken Authentication**
+
+- **A3: Sensitive Data Exposure**
+
+- **A4: XML External Entities (XXE)**
+
+- **A5: Broken Access Control**
+
+- **A6: Security Misconfiguration**
+
+Mục tiêu của đồ án là xác định nguyên nhân gây ra lỗ hổng, mô phỏng kịch bản khai thác, đánh giá rủi ro bảo mật, triển khai biện pháp khắc phục trên mã nguồn và kiểm thử lại ứng dụng sau khi sửa lỗi.
+
+## Thông tin thành viên nhóm
+
+| Mã SV | Họ và tên | Nhóm |
+
+| -------: | ---------------- | :--: |
+
+| 23520538 | Phạm Huy Hoàng | 13 |
+
+| 23521265 | Nguyễn Minh Quân | 13 |
+
+| 23521271 | Trần Hồng Quân | 13 |
+
+| 23521343 | Nguyễn Ngọc Sáng | 13 |
+
 # Damn Vulnerable NodeJS Application (DVNA)
 
 ![dvna-logo](docs/resources/dvna.png)
