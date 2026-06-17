@@ -1,4 +1,4 @@
-# NT213 - Web Application Security Hardening on DVNA
+# NT213
 
 **Lớp:** NT213.Q12.ANTT
 
@@ -25,8 +25,6 @@ Trong phạm vi đồ án, nhóm thực hiện đánh giá và sửa lỗi đố
 - **A6: Security Misconfiguration**
 
 Mục tiêu của đồ án là xác định nguyên nhân gây ra lỗ hổng, mô phỏng kịch bản khai thác, đánh giá rủi ro bảo mật, triển khai biện pháp khắc phục trên mã nguồn và kiểm thử lại ứng dụng sau khi sửa lỗi.
-
-## Thông tin thành viên nhóm
 
 ## Thông tin thành viên nhóm
 
